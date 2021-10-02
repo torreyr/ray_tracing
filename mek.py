@@ -10,7 +10,7 @@ cc = gcc_clang(cmd='g++', dbg='gdb')
 # any libraries to load
 libs = []
 # additional compiler flags
-flags = ['-Wall']
+flags = ['-std=c++11', '-Wall']
 
 if options.release:
     flags += ['-O']
