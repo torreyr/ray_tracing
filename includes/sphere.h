@@ -18,11 +18,11 @@ class Sphere : public Hitable {
         // Fields
         Vec3 center;
         float radius;
-    
+
         // Constructors
         Sphere() {}
         Sphere(Vec3 cen, float r) { center = cen; radius = r; }
-        
+
         // Inherited methods
         virtual bool hit(const Ray&r, float t_min, float t_max, hit_record& rec) const;
 };
@@ -31,16 +31,16 @@ class Sphere : public Hitable {
  * Returns true if ray r intersects with this sphere and false otherwise.
  *
  * Does this by calculating the square root part of the quadratic formula
- * (the discriminant). If that is negative, the equation has zero roots and 
- * the ray does not intersect. Otherwise, if that is zero or positive, the 
+ * (the discriminant). If that is negative, the equation has zero roots and
+ * the ray does not intersect. Otherwise, if that is zero or positive, the
  * equation has one or two roots, respectively.
  *
  * If r intersects, the hit points are calculated. If either of those are
  * within the requeseted range (t_min < t < t_max), it is stored in the
  * provided hit_record.
  *
- * The normal vector for the sphere at the hit point is the vector from the 
- * origin to that point on the sphere minus the vector from the origin to the 
+ * The normal vector for the sphere at the hit point is the vector from the
+ * origin to that point on the sphere minus the vector from the origin to the
  * center of the sphere (0, 0, -1). Divide by radius of the sphere to make it
  * a unit vector.
  */

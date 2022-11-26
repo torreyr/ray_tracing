@@ -9,7 +9,7 @@
  *
  * A HitableList's list field is a pointer to a pointer to a Hitable.
  * Said pointer to Hitable will be the first in the list of pointers.
- * 
+ *
  * Array indexing notation used to access list members.
  * list[0] will be a pointer to the first Hitable.
  * list[1] will be a pointer to the second Hitable.
@@ -20,11 +20,11 @@ class HitableList : public Hitable {
         // Fields
         Hitable **list;
         int list_size;
-        
+
         // Constructors
         HitableList() {}
         HitableList(Hitable **l, int n) { list = l; list_size = n; }
-        
+
         // Inherited methods
         virtual bool hit(const Ray& r, float t_min, float t_max, hit_record& rec) const;
 };
